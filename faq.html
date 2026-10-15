@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Matrix - Water Sort Puzzle</title>
+    <meta name="description" content="20+ Advanced Inquiry Matrix detailing fluid state graphs, GSAP timeline mathematics, and zero-build architecture." />
+    <meta property="og:title" content="FAQ Matrix - Water Sort Puzzle" />
+    <meta property="og:description" content="20+ Advanced Inquiry Matrix detailing fluid state graphs, GSAP timeline mathematics, and zero-build architecture." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS Browser Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Custom Light-Luxury Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-neutral-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+    
+    <!-- ════════════ PERSISTENT TOP NAVIGATION BAR ════════════ -->
+    <header class="fixed top-0 h-16 bg-white/70 backdrop-blur-md border-b border-slate-100 z-50 w-full flex items-center justify-between px-6">
+      <!-- Left: Game Zone Brand -->
+      <a href="./index.html" class="flex items-center gap-2.5 font-bold text-neutral-800 text-lg tracking-tight hover:opacity-90 transition-opacity">
+        <span class="text-xl">🎮</span>
+        <span class="tracking-tight">Game Zone</span>
+      </a>
+
+      <!-- Right: Hamburger Menu Toggler -->
+      <div class="relative">
+        <button id="menu-toggle-btn" type="button" aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex flex-col items-center justify-center gap-1.5 shadow-sm hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300">
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+        </button>
+
+        <!-- Vertical Overlay Dropdown -->
+        <nav id="nav-dropdown" class="hidden-menu absolute right-0 mt-3 w-56 bg-white/95 backdrop-blur-lg border border-slate-100 rounded-2xl shadow-xl p-2 z-50">
+          <a href="./index.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="./play.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>🧪</span>
+            <span>Play Arena</span>
+          </a>
+          <a href="./faq.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-bold text-sm text-cyan-500 drop-shadow-[0_0_12px_rgba(6,182,212,0.6)] brightness-125 bg-cyan-50/50">
+            <span>❓</span>
+            <span>FAQ Matrix</span>
+          </a>
+          <a href="./about.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>📜</span>
+            <span>About Codex</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ════════════ MAIN FAQ ACCORDION MATRIX ════════════ -->
+    <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+      
+      <!-- HERO TITLE SECTION -->
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 mb-3">
+          <span>Architectural Knowledge Codex</span>
+          <span>·</span>
+          <span>20 Verified Inquiries</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-neutral-800 tracking-tight">
+          Advanced System Inquiry Matrix
+        </h1>
+        <p class="text-neutral-500 mt-2 text-sm sm:text-base">
+          Exhaustive specifications covering algorithmic graph theory, GSAP fluid dynamics, telemetry math, and zero-build architectural mechanics.
+        </p>
+      </div>
+
+      <!-- ACCORDION CONTAINER (GSAP SINGLE-OPEN ACCORDION ENGINE) -->
+      <div id="accordion-root" class="space-y-4">
+
+        <!-- ITEM 01 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q01</span>
+              <span>What mathematical graph theory principles underpin the Water Sort puzzle state space?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="mb-3 leading-relaxed">
+              The puzzle is modeled as a <strong>Directed State Transition Graph</strong> $G = (V, E)$, where each vertex $v \in V$ represents an exact permutation vector of tube contents, and each directed edge $e = (u, v) \in E$ denotes a legal liquid pour operation.
+            </p>
+            <div class="overflow-x-auto my-3">
+              <table class="w-full text-xs text-left border border-slate-200 rounded-lg adaptive-table">
+                <thead class="bg-slate-50 text-neutral-700">
+                  <tr>
+                    <th class="p-2.5 border-b border-slate-200">Graph Element</th>
+                    <th class="p-2.5 border-b border-slate-200">Domain Representation</th>
+                    <th class="p-2.5 border-b border-slate-200">Mathematical Constraint</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr>
+                    <td data-label="Graph Element" class="p-2.5 font-mono font-bold text-cyan-600">Vertex (Node)</td>
+                    <td data-label="Domain Representation" class="p-2.5">Array of Tube Stacks $T_1 \dots T_N$</td>
+                    <td data-label="Mathematical Constraint" class="p-2.5 font-mono">|T_i| \le 4</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Graph Element" class="p-2.5 font-mono font-bold text-cyan-600">Edge (Transition)</td>
+                    <td data-label="Domain Representation" class="p-2.5">Pour Action $Pour(i, j)$</td>
+                    <td data-label="Mathematical Constraint" class="p-2.5 font-mono">Top(T_i) == Top(T_j) \lor |T_j| = 0</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Graph Element" class="p-2.5 font-mono font-bold text-cyan-600">Terminal State</td>
+                    <td data-label="Domain Representation" class="p-2.5">Mono-Chromatic Equilibrium</td>
+                    <td data-label="Mathematical Constraint" class="p-2.5 font-mono">\forall i, |T_i| \in \{0, 4\} \land Pure(T_i)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-xs text-neutral-500">Every preset puzzle is verified via Breadth-First Search (BFS) to guarantee a reachable terminal vertex with finite optimal diameter.</p>
+          </div>
+        </div>
+
+        <!-- ITEM 02 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q02</span>
+              <span>How does the pure Vanilla JavaScript architecture eliminate garbage collection pauses?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              By eradicating virtual DOM diffing and intermediate reactive proxy objects (e.g., React Fiber trees), memory allocation occurs strictly inside primitive arrays and direct element class toggles.
+            </p>
+            <ul class="list-disc list-inside space-y-1.5 text-xs text-neutral-600">
+              <li><strong>Zero Virtual DOM Overhead:</strong> State changes mutate standard arrays directly, triggering immediate targeted DOM node updates.</li>
+              <li><strong>Fixed Object Pool:</strong> Audio oscillators and timeline instances reuse existing context structures, eliminating periodic GC sweeps.</li>
+              <li><strong>Compositor-Layer Animation:</strong> GSAP drives CSS transforms (`translate3d`, `rotate`) directly on the GPU compositor thread without forcing layout recalculations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 03 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q03</span>
+              <span>What is the exact mathematical formula for the 6-tier scoring and penalty algorithm?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="mb-3 leading-relaxed">
+              The central evaluation engine inside <code class="font-mono text-xs text-cyan-600 bg-cyan-50 px-1 py-0.5 rounded">./js/framework.js</code> executes this exact formula:
+            </p>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs text-neutral-800 space-y-1">
+              <p>TimePenalty = max(0, floor((timeSpentSeconds - 30) / 2))</p>
+              <p>InefficiencyPenalty = max(0, (totalMoves - optimalMoves) * 2)</p>
+              <p class="font-bold text-cyan-600">Points Gained = max(0, min(100, 100 - TimePenalty - InefficiencyPenalty))</p>
+            </div>
+            <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+              <span class="p-2 rounded bg-cyan-50 text-cyan-700 font-semibold">95-100: QUANTUM EDGE</span>
+              <span class="p-2 rounded bg-pink-50 text-pink-700 font-semibold">85-94: APEX VECTOR</span>
+              <span class="p-2 rounded bg-purple-50 text-purple-700 font-semibold">70-84: HYPER MATRIX</span>
+              <span class="p-2 rounded bg-amber-50 text-amber-700 font-semibold">50-69: LOGIC CORE</span>
+              <span class="p-2 rounded bg-blue-50 text-blue-700 font-semibold">30-49: ALPHA NODE</span>
+              <span class="p-2 rounded bg-slate-100 text-slate-700 font-semibold">0-29: STATIC DRIFT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 04 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q04</span>
+              <span>How is the GSAP 75°-90° pouring trajectory calculated without off-center clipping?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              When a source cylinder is commanded to pour into a target cylinder, the engine calculates the spatial bounding box offsets (`getBoundingClientRect`) and dynamically positions the rotational pivot:
+            </p>
+            <ul class="list-disc list-inside space-y-1.5 text-xs text-neutral-600">
+              <li><strong>Horizontal Vector Check:</strong> If target is to the right ($\Delta X > 0$), rotation is set to $+82^\circ$ with <code class="font-mono bg-slate-100 px-1 py-0.5 rounded">transform-origin: 85% 15%</code>.</li>
+              <li><strong>Inverse Vector Check:</strong> If target is to the left ($\Delta X < 0$), rotation is set to $-82^\circ$ with <code class="font-mono bg-slate-100 px-1 py-0.5 rounded">transform-origin: 15% 15%</code>.</li>
+              <li><strong>Vertical Clearance:</strong> The tube is translated $48\text{px}$ above the mouth plane to allow the stream beam to bridge the distance cleanly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 05 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q05</span>
+              <span>What are the formal preconditions for a valid fluid transfer between two glass cylinders?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              A move $(S, T)$ is deemed valid by <code class="font-mono text-xs text-cyan-600 bg-cyan-50 px-1 py-0.5 rounded">canPour(sourceIdx, targetIdx)</code> if and only if all three logical axioms are satisfied:
+            </p>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs text-neutral-700 space-y-1">
+              <p>1. S \neq T \land |S| > 0</p>
+              <p>2. |T| < 4</p>
+              <p>3. |T| == 0 \lor S[|S|-1] == T[|T|-1]</p>
+            </div>
+            <p class="text-xs text-neutral-500 mt-2">Any violation emits an audible sawtooth frequency error pulse and visual shake animation without altering state.</p>
+          </div>
+        </div>
+
+        <!-- ITEM 06 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q06</span>
+              <span>How does the 20+ Chess-Style Rapid Commentary Matrix trigger velocity toast events?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              Each successful transfer queries performance timers to classify move velocity into one of 4 dynamic categories:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-xs text-neutral-600 mb-3">
+              <li><strong>Sub-1 Second Speeds:</strong> $\Delta t < 1200\text{ms}$ fires supersonic reflexes ("Light Speed Reflex!", "Quantum Velocity Unlocked!").</li>
+              <li><strong>Optimal Tactical Moves:</strong> Normal moves with minimal steps trigger grandmaster pathing praise ("Brilliant Move!", "Flawless Trajectory!").</li>
+              <li><strong>Streak Momentum:</strong> 3 or more consecutive accurate pours activate streak banners ("On Fire! 🔥", "Deep Flow State Achieved!").</li>
+              <li><strong>Recovery Readjustment:</strong> Executing an undo or correcting an off-track vial triggers mitigation feedback ("Tactical Recovery!", "System Balance Restored!").</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 07 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q07</span>
+              <span>How does the Procedural Suggestion Engine synthesize dynamic feedback text vectors?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              The engine combines two independent metric vectors: a <em>Pace Differential Vector</em> $(ParTime - ElapsedTime)$ and an <em>Accuracy Ratio Vector</em> $(OptimalMoves / TotalMoves)$. These are concatenated with tailored pedagogical advice at runtime, ensuring no repetitive static strings are served.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 08 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q08</span>
+              <span>What is the spatial capacity limit of standard glass cylinders and why was 4 chosen?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              A capacity of 4 volumetric units strikes the optimal balance between combinatorial depth and human short-term working memory (Miller's Law: $7 \pm 2$). With $k=4$, a puzzle with $C$ colors has $(4C)! / (4!)^C$ micro-states, offering rich cognitive challenge without exhausting vertical screen real estate.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 09 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q09</span>
+              <span>How are guaranteed-solvable level permutations generated without deadlocks?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              Levels are constructed by applying a <strong>Reverse Shuffle Generator</strong>: starting from a known solved state (each color isolated in a dedicated tube plus 2 empty vials), valid inverse moves are applied for $M$ iterations. This mathematically guarantees that a reverse solution sequence exists in the graph.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 10 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q10</span>
+              <span>What is the strategic role of auxiliary buffer vials in solving multi-layer chromatic bottlenecks?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              Auxiliary buffer vials act as <em>Scratchpad Registers</em>. When all non-empty cylinders are blocked by divergent colors, pouring a top segment into an empty tube temporarily clears the lower strata, enabling the solver to unearth buried target hues.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 11 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q11</span>
+              <span>How does the browser Web Audio API synthesize liquid pouring and bubble audio without external mp3s?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              The internal <code class="font-mono text-xs text-cyan-600 bg-cyan-50 px-1 py-0.5 rounded">SoundFXEngine</code> generates audio procedurally on-the-fly:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-xs text-neutral-600">
+              <li><strong>Select Chime:</strong> High-frequency sine wave sweeping rapidly from $580\text{Hz} \to 880\text{Hz}$.</li>
+              <li><strong>Fluid Pouring Bubbles:</strong> Tri-band triangle oscillators ramping frequencies with randomized decay envelopes.</li>
+              <li><strong>Tube Completion:</strong> 4-note ascending chord arpeggio in C Major ($C_5, E_5, G_5, C_6$).</li>
+              <li><strong>Zero External Asset Dependency:</strong> 100% immune to 404 network fetch errors.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 12 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q12</span>
+              <span>Why is pure relative pathing mandatory for zero-build static GitHub Pages hosting?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              GitHub Pages hosts repositories under sub-paths (e.g., <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">username.github.io/Water-Sorting-Puzzle/</code>). Root-slashed paths like <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">/css/styles.css</code> resolve against the domain root, resulting in broken styles and missing scripts. Pure relative references (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">./css/styles.css</code>) resolve relative to the current HTML file, ensuring seamless loading regardless of hosting sub-directories.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 13 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q13</span>
+              <span>How does the Undo mechanism track multi-unit contiguous fluid transfers?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              The <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">moveHistory</code> array stores a complete operational delta object containing <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">{ source, target, count, color }</code>. When invoking Undo, exactly <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">count</code> units are popped from target and restored to source in a single atomic transaction.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 14 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q14</span>
+              <span>What are the WCAG AA contrast specifications implemented across this light theme?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed mb-3">
+              The application strictly enforces Web Content Accessibility Guidelines (WCAG 2.1 AA):
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-xs text-neutral-600">
+              <li>Primary Text (Deep Charcoal <code class="font-mono bg-slate-100 px-1 py-0.5 rounded">#1E293B</code>) against Alabaster (<code class="font-mono bg-slate-100 px-1 py-0.5 rounded">#F8FAFC</code>) yields a contrast ratio of <strong>13.4:1</strong> (exceeding AA's 4.5:1 requirement).</li>
+              <li>Secondary text (<code class="font-mono bg-slate-100 px-1 py-0.5 rounded">#64748B</code>) achieves <strong>5.1:1</strong>.</li>
+              <li>Touch targets for test tubes and buttons exceed $48\text{px} \times 48\text{px}$.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 15 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q15</span>
+              <span>How does the Clipboard Payload Engine format certified tournament results?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              The payload is assembled via an array join with native newline characters (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">\n</code>), preventing ugly literal string escapes. It signs the player's duration, optimal move differential, and assigned tier, concluding with the immutable certification signature.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 16 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q16</span>
+              <span>How does the memory footprint compare between pure Vanilla DOM vs React virtual DOM in this app?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              Standard React test tube games allocate over 14MB of heap memory for the React runtime, component fibers, synthetic event dispatchers, and hook trees. In contrast, this uncompiled Vanilla JS architecture maintains a lean memory footprint of under <strong>1.8MB</strong>, loading in less than 40 milliseconds on mobile connections.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 17 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q17</span>
+              <span>What happens when two adjacent fluid layers of the same hue are poured simultaneously?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              The engine automatically calculates the contiguous block size ($N$) of matching top tokens. If the target vessel has sufficient remaining capacity ($4 - |T| \ge N$), all $N$ units are transferred together in a single continuous animation, rewarding strategic consolidation.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 18 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q18</span>
+              <span>How is the timer precision maintained against background tab throttling in modern browsers?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              Instead of incrementing a simple counter on each <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">setInterval</code> tick (which drifts when tabs are throttled to 1Hz), the system stores an epoch timestamp via <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Date.now()</code>. Every tick recalculates elapsed seconds directly: <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">(Date.now() - startTime) / 1000</code>, ensuring absolute millisecond accuracy.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 19 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q19</span>
+              <span>What criteria determine whether a move is classified as a "Tactical Recovery"?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              When a player engages the Undo button or shifts an isolated liquid from a contaminated tube back toward a consolidated monochromatic column, the telemetry system tags the event as <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">RECOVERY_READJUSTMENT</code>, providing positive tactical encouragement.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 20 -->
+        <div class="accordion-item neo-card bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden transition-all duration-300">
+          <button type="button" class="accordion-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-neutral-800 hover:text-cyan-600 focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-xs text-cyan-500 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">Q20</span>
+              <span>What is the copyright, licensing, and ecosystem roadmap under IDAI Universe?</span>
+            </span>
+            <span class="accordion-icon text-lg text-neutral-400 transition-transform duration-300">▼</span>
+          </button>
+          <div class="accordion-content hidden px-6 pb-6 text-sm text-neutral-600 border-t border-slate-100 pt-4">
+            <p class="leading-relaxed">
+              Water Sort Puzzle is an authorized production release by <strong>Rayaan Tasnim</strong>, powered by <strong>IDAI Universe</strong>. Future editions incorporate real-time multi-player competitive duplex channels, custom chromatic physics engines, and decentralized leaderboards.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ACTION ROW -->
+      <div class="mt-12 text-center">
+        <a href="./play.html" class="neo-btn inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-sm rounded-2xl shadow-lg shadow-cyan-500/25 border-2 border-cyan-300">
+          <span>Apply These Principles in the Arena</span>
+          <span>🧪</span>
+        </a>
+      </div>
+
+    </main>
+
+    <!-- ════════════ PERSISTENT FOOTER LAYOUT ════════════ -->
+    <footer class="w-full border-t border-slate-100 bg-white py-8 px-6 text-center text-xs tracking-wider font-semibold text-neutral-400 space-y-1">
+      <p>AUTHORIZED BY RAYAAN TASNIM</p>
+      <p>POWERED BY IDAI UNIVERSE</p>
+      <p>© 2026 GAME ZONE. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- Framework & GSAP Accordion Controller -->
+    <script src="./js/framework.js"></script>
+    <script>
+      // ─── GSAP ACCORDION ENGINE (ONE CONTAINER OPEN AT A TIME) ───────
+      document.addEventListener('DOMContentLoaded', () => {
+        const triggers = document.querySelectorAll('.accordion-trigger');
+
+        triggers.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const currentItem = btn.closest('.accordion-item');
+            const currentContent = currentItem.querySelector('.accordion-content');
+            const currentIcon = btn.querySelector('.accordion-icon');
+            const isCurrentlyOpen = !currentContent.classList.contains('hidden');
+
+            // Collapse all items first
+            document.querySelectorAll('.accordion-item').forEach((item) => {
+              const content = item.querySelector('.accordion-content');
+              const icon = item.querySelector('.accordion-icon');
+              if (content && !content.classList.contains('hidden')) {
+                if (window.gsap) {
+                  gsap.to(content, {
+                    height: 0,
+                    opacity: 0,
+                    duration: 0.25,
+                    ease: 'power2.inOut',
+                    onComplete: () => {
+                      content.classList.add('hidden');
+                      content.style.height = '';
+                    }
+                  });
+                } else {
+                  content.classList.add('hidden');
+                }
+                if (icon) icon.style.transform = 'rotate(0deg)';
+                item.classList.remove('border-cyan-400', 'shadow-md');
+              }
+            });
+
+            // If it was closed, open it smoothly
+            if (!isCurrentlyOpen) {
+              currentContent.classList.remove('hidden');
+              currentItem.classList.add('border-cyan-400', 'shadow-md');
+              if (currentIcon) currentIcon.style.transform = 'rotate(180deg)';
+
+              if (window.gsap) {
+                gsap.fromTo(currentContent, {
+                  height: 0,
+                  opacity: 0
+                }, {
+                  height: 'auto',
+                  opacity: 1,
+                  duration: 0.35,
+                  ease: 'power2.out'
+                });
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

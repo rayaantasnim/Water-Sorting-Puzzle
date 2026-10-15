@@ -1,0 +1,6 @@
+{
+  "name": "Water Sort Puzzle - Game Zone",
+  "description": "Zero-build, ultra-fast, premium standalone Water Sort Puzzle web app with GSAP fluid physics and dynamic post-game telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

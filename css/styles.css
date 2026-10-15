@@ -1,0 +1,422 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHT-LUXURY NEON GLOW DESIGN SYSTEM - WATER SORT PUZZLE
+   Authorized by Rayaan Tasnim | Powered by IDAI Universe
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-alabaster: #f8fafc;
+  --panel-crystal: #ffffff;
+  --text-charcoal: #1e293b;
+  --text-muted: #64748b;
+  --neon-cyan: #06b6d4;
+  --neon-magenta: #ec4899;
+  --neon-amber: #f59e0b;
+  --neon-emerald: #10b981;
+}
+
+body {
+  background-color: var(--bg-alabaster);
+  color: var(--text-charcoal);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  letter-spacing: -0.012em;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Tabular numbers for all telemetry and counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Electro-Neon High-Intensity Glow Text */
+.neon-glow-cyan {
+  color: #06b6d4;
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.55)) brightness(1.2);
+}
+
+.neon-glow-magenta {
+  color: #ec4899;
+  filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.55)) brightness(1.15);
+}
+
+.neon-glow-amber {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.55)) brightness(1.15);
+}
+
+/* Enterprise Glassmorphism & Refined Depth Structure */
+.neo-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.neo-card:hover {
+  transform: translateY(-2px) scale(1.008);
+  box-shadow: 0 12px 28px -6px rgba(6, 182, 212, 0.22), 0 0 0 1px rgba(6, 182, 212, 0.35);
+  border-color: rgba(6, 182, 212, 0.45);
+}
+
+.neo-card-magenta:hover {
+  transform: translateY(-2px) scale(1.008);
+  box-shadow: 0 12px 28px -6px rgba(236, 72, 153, 0.22), 0 0 0 1px rgba(236, 72, 153, 0.35);
+  border-color: rgba(236, 72, 153, 0.45);
+}
+
+.neo-btn {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.35);
+}
+
+.neo-btn-magenta:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px -4px rgba(236, 72, 153, 0.35);
+}
+
+/* Normalized HUD Action Button Proportions & Mobile Fluidity */
+.hud-btn {
+  height: 38px;
+  min-width: 78px;
+  padding: 0 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 640px) {
+  .hud-btn {
+    height: 36px;
+    font-size: 0.72rem;
+    padding: 0 0.5rem;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Glass Test Tube Styling */
+.glass-tube {
+  position: relative;
+  width: 64px;
+  height: 220px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(241, 245, 249, 0.5) 100%);
+  border: 3px solid rgba(203, 213, 225, 0.8);
+  border-top: none;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), inset 0 -4px 12px rgba(0, 0, 0, 0.05), inset 2px 0 6px rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transform-origin: 50% 15%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 6px 4px 6px 4px;
+  user-select: none;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .glass-tube {
+    width: 50px;
+    height: 180px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+
+/* Glass Tube Rim (Mouth of tube) */
+.glass-tube::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  right: -4px;
+  height: 8px;
+  border: 3px solid rgba(203, 213, 225, 0.9);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+/* Glass reflection shine on the right side */
+.glass-tube::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  bottom: 24px;
+  width: 4px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Selected Tube state */
+.glass-tube.selected {
+  border-color: #06b6d4;
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.5), inset 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.glass-tube.selected::before {
+  border-color: #06b6d4;
+  background: #cffafe;
+}
+
+/* Solved / Complete Tube Glow */
+.glass-tube.completed {
+  border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), inset 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+/* Liquid Layer Segment */
+.liquid-segment {
+  width: 100%;
+  height: 48px;
+  position: relative;
+  transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .liquid-segment {
+    height: 38px;
+  }
+}
+
+.liquid-segment:first-child {
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+}
+
+/* Liquid Surface Meniscus */
+.liquid-segment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+}
+
+/* Distinct Liquid Colors with High-Fidelity Glow & Gradients */
+.color-cyan {
+  background: linear-gradient(180deg, #22d3ee 0%, #0891b2 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-magenta {
+  background: linear-gradient(180deg, #f472b6 0%, #db2777 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-amber {
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-emerald {
+  background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-violet {
+  background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-coral {
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-blue {
+  background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-lime {
+  background: linear-gradient(180deg, #a3e635 0%, #65a30d 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Pouring Stream Beam */
+#pouring-stream {
+  position: absolute;
+  width: 7px;
+  height: 0px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 40;
+  display: none;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+}
+
+/* Floating Rising Bubbles */
+@keyframes bubbleRise {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-80px) scale(1.1); opacity: 0; }
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: bubbleRise 1.6s infinite ease-in;
+}
+
+/* Chess-style Commentary Toast */
+.commentary-toast {
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Dropdown Menu animation */
+#nav-dropdown {
+  transform-origin: top right;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0.2s;
+}
+
+#nav-dropdown.hidden-menu {
+  opacity: 0;
+  transform: scale(0.95) translateY(-8px);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+#nav-dropdown.show-menu {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ADAPTIVE TABLE LOGIC (MOBILE CARD STACK VS DESKTOP WIDE GRID)
+   ═══════════════════════════════════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
+}
+
+.page-enter {
+  animation: pageEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .adaptive-table,
+  .adaptive-table tbody,
+  .adaptive-table tr,
+  .adaptive-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .adaptive-table thead {
+    display: none !important;
+  }
+
+  .adaptive-table tr {
+    margin-bottom: 1rem;
+    padding: 1.1rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  .adaptive-table tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(6, 182, 212, 0.18);
+    border-color: rgba(6, 182, 212, 0.4);
+  }
+
+  .adaptive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border: none;
+    border-bottom: 1px dashed #f1f5f9;
+    text-align: right;
+  }
+
+  .adaptive-table td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .adaptive-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .adaptive-table {
+    display: table !important;
+  }
+  .adaptive-table thead {
+    display: table-header-group !important;
+  }
+  .adaptive-table tbody {
+    display: table-row-group !important;
+  }
+  .adaptive-table tr {
+    display: table-row !important;
+  }
+  .adaptive-table th,
+  .adaptive-table td {
+    display: table-cell !important;
+  }
+}

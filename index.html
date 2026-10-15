@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Sort Puzzle - Game Zone</title>
+    <meta name="description" content="Zero-build, ultra-fast, premium standalone Water Sort Puzzle web app with GSAP fluid physics and dynamic post-game telemetry." />
+    <meta property="og:title" content="Water Sort Puzzle - Game Zone" />
+    <meta property="og:description" content="Zero-build, ultra-fast, premium standalone Water Sort Puzzle web app with GSAP fluid physics and dynamic post-game telemetry." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS Browser Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Custom Light-Luxury Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-neutral-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+    
+    <!-- ════════════ PERSISTENT TOP NAVIGATION BAR ════════════ -->
+    <header class="fixed top-0 h-16 bg-white/70 backdrop-blur-md border-b border-slate-100 z-50 w-full flex items-center justify-between px-6">
+      <!-- Left: Game Zone Brand -->
+      <a href="./index.html" class="flex items-center gap-2.5 font-bold text-neutral-800 text-lg tracking-tight hover:opacity-90 transition-opacity">
+        <span class="text-xl">🎮</span>
+        <span class="tracking-tight">Game Zone</span>
+      </a>
+
+      <!-- Right: Hamburger Menu Toggler -->
+      <div class="relative">
+        <button id="menu-toggle-btn" type="button" aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex flex-col items-center justify-center gap-1.5 shadow-sm hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300">
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+        </button>
+
+        <!-- Vertical Overlay Dropdown -->
+        <nav id="nav-dropdown" class="hidden-menu absolute right-0 mt-3 w-56 bg-white/95 backdrop-blur-lg border border-slate-100 rounded-2xl shadow-xl p-2 z-50">
+          <a href="./index.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-bold text-sm text-cyan-500 drop-shadow-[0_0_12px_rgba(6,182,212,0.6)] brightness-125 bg-cyan-50/50">
+            <span>🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="./play.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>🧪</span>
+            <span>Play Arena</span>
+          </a>
+          <a href="./faq.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>❓</span>
+            <span>FAQ Matrix</span>
+          </a>
+          <a href="./about.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>📜</span>
+            <span>About Codex</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ════════════ MAIN LANDING CONTENT ════════════ -->
+    <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+      
+      <!-- HERO RULES GATEWAY BANNER -->
+      <section class="neo-card bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 lg:p-12">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100">
+              <span>Scientific Fluid Mechanics</span>
+              <span>·</span>
+              <span>Pure Vanilla Engine</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-neutral-800 tracking-tight leading-tight">
+              Master the Geometry of <span class="text-cyan-500 drop-shadow-[0_0_16px_rgba(6,182,212,0.5)]">Fluid Sorting</span>
+            </h1>
+
+            <p class="text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+              Welcome to the precision puzzle environment. Multi-colored liquid density strata are distributed across scientific glass cylinders. Manipulate laminar fluid transfers until every vial holds an immaculate single hue.
+            </p>
+
+            <!-- Call to Action -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="./play.html" class="neo-btn inline-flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-base rounded-2xl shadow-lg shadow-cyan-500/25 border-2 border-cyan-300">
+                <span>Enter Game Arena</span>
+                <span class="text-xl">➔</span>
+              </a>
+              <a href="#rules-codex" class="neo-btn inline-flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-slate-50 text-neutral-700 font-semibold text-base rounded-2xl border border-slate-200">
+                <span>View Sorting Laws</span>
+              </a>
+            </div>
+
+            <!-- Mini Spec Indicators -->
+            <div class="flex items-center gap-6 pt-2 text-xs font-medium text-neutral-500">
+              <span class="flex items-center gap-1.5"><span class="text-cyan-500">✔</span> Zero Build Latency</span>
+              <span class="flex items-center gap-1.5"><span class="text-cyan-500">✔</span> GSAP 75°-90° Pouring</span>
+              <span class="flex items-center gap-1.5"><span class="text-cyan-500">✔</span> 6 Performance Ranks</span>
+            </div>
+          </div>
+
+          <!-- Hero Media Visual -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-md aspect-video lg:aspect-[4/3] bg-slate-100">
+              <img 
+                src="./images/hero.jpg" 
+                alt="Water Sort Glass Tubes filled with glowing liquids" 
+                class="w-full h-full object-cover" 
+                loading="eager"
+                referrerpolicy="no-referrer"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <p class="text-xs font-semibold tracking-wider uppercase text-cyan-300">Precision Testing Lab</p>
+                <p class="text-sm font-medium">Standard 4-Unit Glass Cylinders</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ════════════ WAY TO PLAY: THE 3 GOLDEN RULES ════════════ -->
+      <section id="rules-codex" class="mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-800 tracking-tight">
+            The Fundamental Laws of Liquid Sorting
+          </h2>
+          <p class="text-neutral-500 mt-2 text-sm sm:text-base">
+            Every movement in the matrix is governed by three immutable scientific constraints.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Rule 1 Card -->
+          <div class="neo-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold text-xl mb-5 border border-cyan-100">
+                01
+              </div>
+              <h3 class="text-lg font-bold text-neutral-800 mb-2">Chromatic Harmony Law</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Liquids can only be poured over an identical color token. The receiving vessel must have its uppermost surface matching the pouring stream.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-cyan-600">
+              <span>Rule Constraint: Strict Hue Match</span>
+              <span>🔒 Sealed</span>
+            </div>
+          </div>
+
+          <!-- Rule 2 Card -->
+          <div class="neo-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center font-bold text-xl mb-5 border border-pink-100">
+                02
+              </div>
+              <h3 class="text-lg font-bold text-neutral-800 mb-2">Fixed Volumetric Capacity</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Every cylinder maintains an exact volume capacity of four standardized units. A target container cannot receive liquid if it is already filled.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-pink-600">
+              <span>Cap: 4 Units Maximum</span>
+              <span>⚖️ Standardized</span>
+            </div>
+          </div>
+
+          <!-- Rule 3 Card -->
+          <div class="neo-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xl mb-5 border border-amber-100">
+                03
+              </div>
+              <h3 class="text-lg font-bold text-neutral-800 mb-2">Auxiliary Buffer Vials</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Empty spare vials accept any color stratum unconditionally. Use these crucial expansion zones to unpack complex intertwined chromatic layers.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-amber-600">
+              <span>Strategic Buffer Zone</span>
+              <span>🧪 Tactical</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ════════════ 6 PERFORMANCE TIERS PREVIEW ════════════ -->
+      <section class="neo-card bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-10 mb-16">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-100 pb-6">
+          <div>
+            <h2 class="text-2xl font-extrabold text-neutral-800 tracking-tight">System Ranking Hierarchy</h2>
+            <p class="text-neutral-500 text-sm mt-1">Evaluated in real-time based on your solve duration and pathing efficiency.</p>
+          </div>
+          <a href="./about.html" class="inline-flex items-center gap-2 text-sm font-bold text-cyan-600 hover:text-cyan-500">
+            <span>Read Ranking Whitepaper</span>
+            <span>➔</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="p-4 rounded-2xl border border-cyan-200 bg-cyan-50/40 text-center">
+            <span class="text-xs font-mono font-bold text-cyan-600 block">95 - 100 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">QUANTUM EDGE</span>
+            <span class="text-[11px] text-cyan-700 font-medium">Tier S+ Master</span>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-pink-200 bg-pink-50/40 text-center">
+            <span class="text-xs font-mono font-bold text-pink-600 block">85 - 94 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">APEX VECTOR</span>
+            <span class="text-[11px] text-pink-700 font-medium">Tier S Strategist</span>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-purple-200 bg-purple-50/40 text-center">
+            <span class="text-xs font-mono font-bold text-purple-600 block">70 - 84 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">HYPER MATRIX</span>
+            <span class="text-[11px] text-purple-700 font-medium">Tier A Tactician</span>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-amber-200 bg-amber-50/40 text-center">
+            <span class="text-xs font-mono font-bold text-amber-600 block">50 - 69 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">LOGIC CORE</span>
+            <span class="text-[11px] text-amber-700 font-medium">Tier B Solver</span>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-blue-200 bg-blue-50/40 text-center">
+            <span class="text-xs font-mono font-bold text-blue-600 block">30 - 49 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">ALPHA NODE</span>
+            <span class="text-[11px] text-blue-700 font-medium">Tier C Explorer</span>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50 text-center">
+            <span class="text-xs font-mono font-bold text-slate-500 block">0 - 29 PTS</span>
+            <span class="text-sm font-extrabold text-neutral-800 mt-1 block">STATIC DRIFT</span>
+            <span class="text-[11px] text-slate-600 font-medium">Tier D Recruit</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════ QUICK CALL TO ACTION ════════════ -->
+      <section class="text-center bg-gradient-to-r from-cyan-500/10 via-white to-pink-500/10 rounded-3xl border border-slate-200/80 p-10 sm:p-14 shadow-sm">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-800 mb-4">
+          Ready to Test Your Cognitive Precision?
+        </h2>
+        <p class="text-neutral-600 max-w-xl mx-auto text-base sm:text-lg mb-8">
+          Step into the live arena, maneuver fluid segments, and watch the physics timeline unfold with zero latency.
+        </p>
+        <a href="./play.html" class="neo-btn inline-flex items-center gap-3 px-10 py-5 bg-cyan-500 hover:bg-cyan-400 text-white font-extrabold text-lg rounded-2xl shadow-xl shadow-cyan-500/30 border-2 border-cyan-200">
+          <span>Launch Arena Now</span>
+          <span class="text-2xl">⚡</span>
+        </a>
+      </section>
+
+    </main>
+
+    <!-- ════════════ PERSISTENT FOOTER LAYOUT ════════════ -->
+    <footer class="w-full border-t border-slate-100 bg-white py-8 px-6 text-center text-xs tracking-wider font-semibold text-neutral-400 space-y-1">
+      <p>AUTHORIZED BY RAYAAN TASNIM</p>
+      <p>POWERED BY IDAI UNIVERSE</p>
+      <p>© 2026 GAME ZONE. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- Framework & Game Engine -->
+    <script src="./js/framework.js"></script>
+  </body>
+</html>

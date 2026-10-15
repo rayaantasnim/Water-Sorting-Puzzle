@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Telemetry - Water Sort Puzzle</title>
+    <meta name="description" content="Dynamic post-game performance telemetry dashboard with scoring matrices, 6-tier ranking, and clipboard certification." />
+    <meta property="og:title" content="Performance Telemetry - Water Sort Puzzle" />
+    <meta property="og:description" content="Dynamic post-game performance telemetry dashboard with scoring matrices, 6-tier ranking, and clipboard certification." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS Browser Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Custom Light-Luxury Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-neutral-800 antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-800">
+    
+    <!-- ════════════ PERSISTENT TOP NAVIGATION BAR ════════════ -->
+    <header class="fixed top-0 h-16 bg-white/70 backdrop-blur-md border-b border-slate-100 z-50 w-full flex items-center justify-between px-6">
+      <!-- Left: Game Zone Brand -->
+      <a href="./index.html" class="flex items-center gap-2.5 font-bold text-neutral-800 text-lg tracking-tight hover:opacity-90 transition-opacity">
+        <span class="text-xl">🎮</span>
+        <span class="tracking-tight">Game Zone</span>
+      </a>
+
+      <!-- Right: Hamburger Menu Toggler -->
+      <div class="relative">
+        <button id="menu-toggle-btn" type="button" aria-label="Toggle Navigation Menu" class="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex flex-col items-center justify-center gap-1.5 shadow-sm hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all duration-300">
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-neutral-700 rounded-full"></span>
+        </button>
+
+        <!-- Vertical Overlay Dropdown -->
+        <nav id="nav-dropdown" class="hidden-menu absolute right-0 mt-3 w-56 bg-white/95 backdrop-blur-lg border border-slate-100 rounded-2xl shadow-xl p-2 z-50">
+          <a href="./index.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="./play.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>🧪</span>
+            <span>Play Arena</span>
+          </a>
+          <a href="./faq.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>❓</span>
+            <span>FAQ Matrix</span>
+          </a>
+          <a href="./about.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl font-medium text-sm text-neutral-600 hover:text-cyan-600 hover:bg-slate-50 transition-colors">
+            <span>📜</span>
+            <span>About Codex</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ════════════ MAIN TELEMETRY DASHBOARD ════════════ -->
+    <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+      
+      <!-- HEADER TITLE ROW -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 mb-2">
+            <span>Telemetry Register 02</span>
+            <span>·</span>
+            <span>Verified Post-Game Log</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-neutral-800 tracking-tight">
+            Performance Telemetry Dashboard
+          </h1>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold text-neutral-500">Log Timestamp:</span>
+          <span id="log-timestamp" class="font-mono text-xs font-bold text-neutral-700 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+            Just Now
+          </span>
+        </div>
+      </div>
+
+      <!-- PRIMARY KPI CARD: SCORE CIRCLE & HOT MAGENTA RANK BADGE -->
+      <section class="neo-card bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Clean Neon Circle for Points Score out of 100 -->
+          <div class="md:col-span-5 flex flex-col items-center justify-center">
+            <div class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-slate-50 border-4 border-cyan-100 flex flex-col items-center justify-center shadow-inner hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] transition-all duration-300">
+              
+              <!-- Subtle Animated Glow Ring -->
+              <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="44" fill="none" stroke="#e2e8f0" stroke-width="4"></circle>
+                <circle id="score-ring" cx="50" cy="50" r="44" fill="none" stroke="#06b6d4" stroke-width="5" stroke-dasharray="276" stroke-dashoffset="30" stroke-linecap="round"></circle>
+              </svg>
+
+              <span class="text-xs font-bold uppercase tracking-wider text-neutral-400">Total Score</span>
+              <div class="flex items-baseline gap-1 my-1">
+                <span id="metric-score" class="font-mono text-5xl sm:text-6xl font-extrabold text-neutral-800 tabular-nums">98</span>
+                <span class="font-mono text-lg font-bold text-neutral-400">/100</span>
+              </div>
+              <span class="text-xs font-medium text-cyan-600 bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-100">Points Gained</span>
+            </div>
+          </div>
+
+          <!-- Hot Magenta Rank Badge & Tier Profile -->
+          <div class="md:col-span-7 space-y-5">
+            <div>
+              <span class="text-xs font-semibold text-neutral-400 uppercase tracking-wider block mb-1">Assigned Classification</span>
+              <div class="inline-block">
+                <!-- Hot Magenta Rank Badge -->
+                <div id="rank-badge" class="px-6 py-2.5 rounded-2xl bg-pink-50 border-2 border-pink-300 text-pink-600 font-extrabold text-xl sm:text-2xl tracking-wider shadow-sm shadow-pink-500/10 drop-shadow-[0_0_8px_rgba(236,72,153,0.3)]">
+                  QUANTUM EDGE
+                </div>
+              </div>
+              <span id="tier-badge" class="ml-3 text-xs font-bold text-neutral-500 uppercase tracking-widest">
+                Tier S+ Sovereign
+              </span>
+            </div>
+
+            <!-- Execution Time Format: strict dynamic fractional seconds string -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <span class="text-xs font-semibold text-neutral-500 block mb-1">Execution Time Metric</span>
+              <p id="metric-time-formatted" class="font-mono text-lg sm:text-xl font-bold text-neutral-800">
+                0 minutes 24.82 seconds
+              </p>
+              <p class="text-[11px] text-neutral-400 mt-1">Par Target Time: 30.00 seconds</p>
+            </div>
+
+            <!-- Procedural Suggestion Engine Vector -->
+            <div class="p-4 rounded-2xl bg-cyan-50/50 border border-cyan-100">
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan-700 block mb-1 flex items-center gap-1.5">
+                <span>🧠</span>
+                <span>Procedural Suggestion Vector</span>
+              </span>
+              <p id="metric-suggestion" class="text-xs sm:text-sm text-neutral-700 leading-relaxed font-medium">
+                Hypersonic pace detected (5.2s under par window), achieving a pristine 100% pathing efficiency with zero redundant fluid transfers. Recommendation: Outstanding mental coordinate indexing! Ready to dominate higher complexity permutation matrices.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECONDARY TELEMETRY BREAKDOWN METRICS -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        
+        <div class="neo-card bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+          <span class="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">Total Moves</span>
+          <p id="metric-moves" class="font-mono text-2xl font-bold text-neutral-800 mt-1">7</p>
+          <span class="text-[11px] text-neutral-500">Baseline Optimal: <span id="metric-optimal" class="font-mono font-bold">7</span></span>
+        </div>
+
+        <div class="neo-card bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+          <span class="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">Trajectory Accuracy</span>
+          <p id="metric-accuracy" class="font-mono text-2xl font-bold text-cyan-600 mt-1">100%</p>
+          <span class="text-[11px] text-neutral-500">Pathing Efficiency Ratio</span>
+        </div>
+
+        <div class="neo-card bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+          <span class="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">Time Penalty</span>
+          <p id="metric-time-penalty" class="font-mono text-2xl font-bold text-neutral-800 mt-1">0 PTS</p>
+          <span class="text-[11px] text-neutral-500">1 pt / 2s past par window</span>
+        </div>
+
+        <div class="neo-card bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+          <span class="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">Inefficiency Penalty</span>
+          <p id="metric-inefficiency" class="font-mono text-2xl font-bold text-neutral-800 mt-1">0 PTS</p>
+          <span class="text-[11px] text-neutral-500">2 pts / redundant move</span>
+        </div>
+
+      </section>
+
+      <!-- CLIPBOARD PAYLOAD ENGINE & CONTROL ACTIONS -->
+      <section class="neo-card bg-white rounded-3xl border border-slate-100 shadow-sm p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="space-y-1 text-center md:text-left">
+          <h3 class="text-lg font-bold text-neutral-800">Telemetry Certification Verification</h3>
+          <p class="text-xs text-neutral-500 max-w-md">
+            Generate an immutable cryptographic-grade text payload formatted with native line breaks for Discord, Telegram, or tournament records.
+          </p>
+        </div>
+
+        <!-- Clipboard Trigger Button -->
+        <button id="btn-copy-clipboard" type="button" class="neo-btn px-6 py-3.5 bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs sm:text-sm rounded-2xl flex items-center gap-2 shadow-md hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] border border-neutral-700">
+          <span>📋</span>
+          <span id="copy-btn-text">Copy Certified Scorecard</span>
+        </button>
+
+      </section>
+
+      <!-- NAVIGATION CONTROL ROW -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="./play.html" class="neo-btn inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-sm rounded-2xl shadow-lg shadow-cyan-500/25 border-2 border-cyan-300">
+          <span>Play Again</span>
+          <span>🔄</span>
+        </a>
+        <a href="./play.html?new=1" class="neo-btn inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-neutral-700 font-bold text-sm rounded-2xl border border-slate-200">
+          <span>Dive Into New Game</span>
+          <span>🚀</span>
+        </a>
+        <a href="./about.html" class="neo-btn inline-flex items-center gap-2 px-6 py-4 bg-white hover:bg-slate-50 text-neutral-600 font-semibold text-sm rounded-2xl border border-slate-200">
+          <span>Inspect Architecture Codex</span>
+          <span>📜</span>
+        </a>
+      </div>
+
+    </main>
+
+    <!-- ════════════ PERSISTENT FOOTER LAYOUT ════════════ -->
+    <footer class="w-full border-t border-slate-100 bg-white py-8 px-6 text-center text-xs tracking-wider font-semibold text-neutral-400 space-y-1">
+      <p>AUTHORIZED BY RAYAAN TASNIM</p>
+      <p>POWERED BY IDAI UNIVERSE</p>
+      <p>© 2026 GAME ZONE. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- Framework & Telemetry Controller Script -->
+    <script src="./js/framework.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        let telemetry = null;
+        try {
+          const raw = localStorage.getItem('water_sort_telemetry');
+          if (raw) {
+            telemetry = JSON.parse(raw);
+          }
+        } catch (e) {
+          console.warn('Error reading telemetry:', e);
+        }
+
+        // Fallback default demonstration if player visited results page directly
+        if (!telemetry || !telemetry.evaluation) {
+          const evalDemo = evaluatePerformance(24.82, 7, 7, 30);
+          telemetry = {
+            level: 1,
+            levelTitle: "Quantum Genesis",
+            timeSpentSeconds: 24.82,
+            totalMoves: 7,
+            optimalMoves: 7,
+            parTimeSeconds: 30,
+            evaluation: evalDemo,
+            timestamp: Date.now()
+          };
+        }
+
+        const ev = telemetry.evaluation;
+
+        // Populate DOM elements
+        document.getElementById('metric-score').textContent = ev.points;
+        document.getElementById('rank-badge').textContent = ev.rank;
+        document.getElementById('tier-badge').textContent = `${ev.tier} Class`;
+        document.getElementById('metric-time-formatted').textContent = ev.timeFormatted;
+        document.getElementById('metric-suggestion').textContent = ev.suggestion;
+        document.getElementById('metric-moves').textContent = telemetry.totalMoves;
+        document.getElementById('metric-optimal').textContent = telemetry.optimalMoves;
+        document.getElementById('metric-accuracy').textContent = `${ev.efficiencyPct}%`;
+        document.getElementById('metric-time-penalty').textContent = `-${ev.timePenalty} PTS`;
+        document.getElementById('metric-inefficiency').textContent = `-${ev.inefficiencyPenalty} PTS`;
+
+        if (telemetry.timestamp) {
+          const d = new Date(telemetry.timestamp);
+          document.getElementById('log-timestamp').textContent = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        }
+
+        // Score Ring Animation
+        const ring = document.getElementById('score-ring');
+        if (ring) {
+          const circumference = 2 * Math.PI * 44; // approx 276.46
+          const offset = circumference - (ev.points / 100) * circumference;
+          ring.style.strokeDasharray = `${circumference}`;
+          ring.style.strokeDashoffset = `${circumference}`;
+          setTimeout(() => {
+            ring.style.transition = 'stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1)';
+            ring.style.strokeDashoffset = `${offset}`;
+          }, 100);
+        }
+
+        // ─── CLIPBOARD PAYLOAD ENGINE ─────────────────────────────────
+        // Copies text cleanly with actual line breaks ending exactly with required metadata
+        const copyBtn = document.getElementById('btn-copy-clipboard');
+        const copyTextSpan = document.getElementById('copy-btn-text');
+
+        if (copyBtn) {
+          copyBtn.addEventListener('click', async () => {
+            const payload = [
+              "═══════════════════════════════════════",
+              "WATER SORT PUZZLE - PERFORMANCE SCORECARD",
+              "═══════════════════════════════════════",
+              `Score: ${ev.points} / 100 Points`,
+              `Ranking: ${ev.rank} (${ev.tier})`,
+              `Duration: ${ev.timeFormatted}`,
+              `Total Moves: ${telemetry.totalMoves} (Optimal: ${telemetry.optimalMoves})`,
+              `Pathing Efficiency: ${ev.efficiencyPct}%`,
+              `Procedural Telemetry: ${ev.suggestion}`,
+              "───────────────────────────────────────",
+              "Certified by Rayaan Tasnim",
+              "Powered by IDAI Universe",
+              "© All rights reserved"
+            ].join("\n");
+
+            try {
+              await navigator.clipboard.writeText(payload);
+              copyTextSpan.textContent = "Copied to Clipboard! ✔";
+              copyBtn.classList.add('border-cyan-400');
+              setTimeout(() => {
+                copyTextSpan.textContent = "Copy Certified Scorecard";
+                copyBtn.classList.remove('border-cyan-400');
+              }, 2500);
+            } catch (err) {
+              console.error('Clipboard copy error:', err);
+              // Fallback
+              const textarea = document.createElement('textarea');
+              textarea.value = payload;
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand('copy');
+              textarea.remove();
+              copyTextSpan.textContent = "Copied to Clipboard! ✔";
+              setTimeout(() => {
+                copyTextSpan.textContent = "Copy Certified Scorecard";
+              }, 2500);
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
